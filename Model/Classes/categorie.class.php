@@ -1,7 +1,7 @@
 <?php
 
 class Categorie {
-    private $id_categorie;
+    private $id;
     private $libelle;
     private $image;
     private $active;

@@ -1,7 +1,7 @@
 <?php
 
 class Plat {
-    private $id_plat;
+    private $id;
     private $libelle;
     private $description;
     private $prix;

@@ -1,11 +1,19 @@
 <?php
 
 function dbconnect() {
+    // Connexion à la base de données
+    $host = 'localhost'; // Changer au besoin
+    $dbname = 'TheDistrict'; // Changer au besoin
+    $user = 'admin'; // Changer au besoin
+    $password = 'Afpa1234'; // Changer au besoin
 
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=TheDistrict','admin','Afpa1234');
-        return $pdo;
+        $bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+        // Gestion des erreurs PDO
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $bdd;
     } catch (PDOException $e) {
-        die("La connexion à la base de données a échoué : " . $e->getMessage());
+        // Gérer l'erreur de connexion de manière appropriée (journalisation, affichage d'un message d'erreur, etc.)
+        exit('Erreur de connexion à la base de données : ' . $e->getMessage());
     }
 }

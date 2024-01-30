@@ -14,29 +14,14 @@ function markActivePage() {
 
 function loadAndSearch() {
     function performSearch(input) {
-        // Faire une requête AJAX pour récupérer les catégories correspondant à la recherche depuis le serveur
-        $.ajax({
-            url: 'search_categories.php',
-            type: 'GET',
-            data: { input: input },
-            dataType: 'json',
-            success: function (response) {
-                updateCategories(response);
-            },
-            error: function (xhr, status, error) {
-                console.error('Erreur lors de la recherche de catégories:', error);
-            }
+        var matchingCategories = jsonData.categorie.filter(function (categorie) {
+            return categorie.libelle.toLowerCase().includes(input.toLowerCase());
         });
-    }
-
-    function updateCategories(categories) {
-        // Mettre à jour l'affichage des catégories avec les données reçues du serveur
-        categoryContainer.empty(); // Effacer le contenu précédent
 
         categories.forEach(function (category) {
             var newCard = $("<div class='col-md-4 d-flex justify-content-center justify-content-md-between mb-4'>" +
                 "<div class='card zoom-image'>" +
-                "<img src='Asset/Img/category/" + category.image + "' class='categories-img-top card-img' alt='Image de la carte'>" +
+                "<img src='../image/category/" + category.image + "' class='categories-img-top card-img' alt='Image de la carte'>" +
                 "<div class='card-body'>" +
                 "<h5 class='categories-title'>" + category.libelle + "</h5>" +
                 "<span class='badge rounded-pill'></span>" +
@@ -58,12 +43,33 @@ function loadAndSearch() {
                 });
             }
         });
+
+        updateSearchResults(matchingCategories);
+    }
+
+    function updateSearchResults(results) {
+        $("#searchInput").autocomplete({
+            source: results.map(function (categorie) {
+                return categorie.libelle;
+            }),
+            select: function (event, ui) {
+                var selectedCategorie = jsonData.categorie.find(function (categorie) {
+                    return categorie.libelle === ui.item.label;
+                });
+                console.log("Sélection via Autocomplete");
+                window.location.href = "platCategorie.php?id=" + selectedCategorie.id_categorie;
+            },
+        });
     }
 
     $("#searchButton").on("click", function (e) {
         e.preventDefault();
         var inputValue = $("#searchInput").val();
         performSearch(inputValue);
+        var selectedCategorie = jsonData.categorie.find(function (categorie) {
+            return categorie.libelle.toLowerCase() === $("#searchInput").val().toLowerCase();
+        });
+        window.location.href = "platCategorie.php?id=" + selectedCategorie.id_categorie;
     });
 
     $("#searchInput").on("keypress", function (e) {
@@ -71,10 +77,13 @@ function loadAndSearch() {
             e.preventDefault();
             var inputValue = $(this).val();
             performSearch(inputValue);
+            var selectedCategorie = jsonData.categorie.find(function (categorie) {
+                return categorie.libelle.toLowerCase() === $("#searchInput").val().toLowerCase();
+            });
+            window.location.href = "platCategorie.php?id=" + selectedCategorie.id_categorie;
         }
     });
 }
-
 
 // Fonction pour charger les catégories avec pagination
 function loadCategories(currentPage) {

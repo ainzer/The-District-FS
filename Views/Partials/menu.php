@@ -20,8 +20,8 @@
                     <a class="nav-link color-heading fs-2" href="contact.php">Contact</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search" action="rechercher.php" method="GET">
-                <input id="searchInput" class="form-control me-2 mod-search fs-4" type="search" name="query" placeholder="Rechercher" aria-label="Search">
+            <form class="d-flex" role="search">
+                <input id="searchInput" class="form-control me-2 mod-search fs-4" type="search" placeholder="Rechercher" aria-label="Search">
                 <button class="btn btn-outline-success color-search" id="searchButton" type="submit">Rechercher</button>
             </form>
 

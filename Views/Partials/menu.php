@@ -1,7 +1,7 @@
 <header>
         <nav class="navbar navbar-expand-lg bg-custom-color">
             <a class="navbar-brand color-title no-hover-color-change fs-1">
-                <img class="logo" src="/image/the_district_brand/logo_transparent.png" alt="Logo"
+                <img class="logo" src="Asset/Img/the_district_brand/logo_transparent.png" alt="Logo"
                     class="d-inline-block align-text-center"> The District</a>
             <button class="navbar-toggler color-btn" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -11,10 +11,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link color-heading fs-2" href="accueil.php">Accueil</a>
+                        <a class="nav-link color-heading fs-2" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-heading fs-2" href="categories.php">Catégories</a>
+                        <a class="nav-link color-heading fs-2" href="categorie.php">Catégories</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link color-heading fs-2" href="plats.php">Plats</a>

@@ -29,7 +29,7 @@ class CategorieManager {
             return $categories;
         } catch (PDOException $e) {
             // Gérer l'erreur de requête de manière appropriée (journalisation, affichage d'un message d'erreur, etc.)
-            exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
+            die('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
     }
 }

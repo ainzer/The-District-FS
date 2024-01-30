@@ -7,7 +7,7 @@ require_once 'Views/Partials/menu.php';
     <div class="row">
         <div class="col-md-12">
             <div style="width: 800px; height: 400px; margin: auto;">
-                <video id="videoFrame" style="width: 100%; height: 100%;" src="../video/video (2160p).mp4"  autoplay muted loop></video>
+                <video id="videoFrame" style="width: 100%; height: 100%;" src="Asset/video/video (2160p).mp4"  autoplay muted loop></video>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@ require_once 'Views/Partials/menu.php';
     <div class="row">
         <div class="col-12">
             <div style="width: 100%; height: 200px; margin: auto;">
-                <video id="videoFrame" style="width: 100%; height: 100%;" src="../video/video (2160p).mp4" autoplay muted loop></video>
+                <video id="videoFrame" style="width: 100%; height: 100%;" src="Asset/video/video (2160p).mp4" autoplay muted loop></video>
             </div>
         </div>
     </div>

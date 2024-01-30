@@ -23,13 +23,6 @@ require_once 'Views/Partials/menu.php';
     </div>
 </div>
 
-
-
-
-
-
-
-
 <div class="parallax">
     <div class="container-fluid mt-3 row">
         <?php

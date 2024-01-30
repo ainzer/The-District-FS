@@ -1,44 +1,38 @@
 <?php
 
 class Categorie {
-
     private $id;
     private $libelle;
     private $image;
     private $active;
 
-    public function getId()
-    {
+    // Getters
+    public function getId() {
         return $this->id;
     }
 
-    public function getLibelle()
-    {
+    public function getLibelle() {
         return $this->libelle;
     }
 
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-    }
-
-    public function getImage()
-    {
+    public function getImage() {
         return $this->image;
     }
 
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
 
-    public function setActive($active)
-    {
+    // Setters
+    public function setLibelle($libelle) {
+        $this->libelle = $libelle;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+    public function setActive($active) {
         $this->active = $active;
     }
 }

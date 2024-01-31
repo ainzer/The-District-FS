@@ -50,22 +50,23 @@ class PlatManager {
         }
     }
 
-    public static function getPlatById() {
+    public static function getPlatById($id) {
 
         $bdd = dbconnect();
-
+    
         try {
-            $query = "SELECT id, image, libelle, description, prix FROM plat";
-
+            $query = "SELECT image, libelle, description, prix FROM plat WHERE id = :id";
+    
             $stmt = $bdd->prepare($query);
+            $stmt->bindParam(':id', $id);
             $stmt->execute();
-
-            $plat = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
+            $plat = $stmt->fetch(PDO::FETCH_ASSOC);
+    
             return $plat;
         } catch (PDOException $e) {
             exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
-    }
+    }    
 }
 ?>

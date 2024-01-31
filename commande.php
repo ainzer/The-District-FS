@@ -8,6 +8,3 @@ if (isset($_GET['plat_id'])) {
     // Rediriger l'utilisateur vers une autre page ou afficher un message d'erreur si aucune information de commande n'est transmise
     echo "Aucune information de commande n'est spécifiée.";
 }
-
-
-require_once 'Views/commandeView.php';

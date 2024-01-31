@@ -31,5 +31,23 @@ class PlatManager {
             exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
     }
+
+    public static function getPlats() {
+
+        $bdd = dbconnect();
+
+        try {
+            $query = "SELECT image,libelle, description, prix FROM plat LIMIT 6";
+
+            $stmt = $bdd->prepare($query);
+            $stmt->execute();
+
+            $plats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $plats;
+        } catch (PDOException $e) {
+            exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
+        }
+    }
 }
 ?>

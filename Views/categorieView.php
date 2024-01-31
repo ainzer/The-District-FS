@@ -14,14 +14,23 @@ require_once 'Views/Partials/menu.php';
 </div>
 
 
-<div class="container mt-2">
-    <div class="row" id="cartesCategories"></div>
-    <div class="d-flex justify-content-between">
-        <input type="button" id="precedentButton" class="btn btn-primary mt-2 btn-mod" value="Précédent" disabled>
-        <input type="button" id="suivantButton" class="btn btn-primary mt-2 btn-mod" value="Suivant">
+<div class="container-fluid mt-3 row">
+        <!-- Affichage des catégories les plus populaires -->
+        <?php
+        $categories = CategorieManager::getCategorieActive();
+        foreach ($categories as $categorie) {
+            echo '
+            <div class="col-md-4 d-flex justify-content-center  mb-4">
+                <div class="card zoom-image">
+                    <img src="Asset/Img/category/' . $categorie['image'] . '" class="card-img-top card-img" alt="Image de la carte">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $categorie['libelle'] . '</h5>
+                    </div>
+                </div>
+            </div>';
+        }
+        ?>
     </div>
-
-</div>
 
 <?php
 require_once 'Views/Partials/footer.php';

@@ -37,7 +37,7 @@ class PlatManager {
         $bdd = dbconnect();
 
         try {
-            $query = "SELECT image,libelle, description, prix FROM plat LIMIT 6";
+            $query = "SELECT id, image,libelle, description, prix FROM plat LIMIT 6";
 
             $stmt = $bdd->prepare($query);
             $stmt->execute();

@@ -6,13 +6,8 @@ require_once 'Views/Partials/menu.php';
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
-            <div class="card zoom-image">
-                <img id="selectedPlatImage" class="plat-img-top card-img" alt="Image du plat">
-                <div class="card-body">
-                    <h5 class="plat-title" id="selectedPlatTitle"></h5>
-                    <p class="plat-description" id="selectedPlatDescription"></p>
-                    <p class="plat-price" id="selectedPlatPrice"></p>
-                </div>
+            <div class="card">
+                
             </div>
         </div>
         <div class="col-md-6">

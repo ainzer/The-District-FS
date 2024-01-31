@@ -17,7 +17,6 @@ require_once 'Views/Partials/menu.php';
 <div class="container-fluid mt-3 row">
         <!-- Affichage des catégories les plus populaires -->
         <?php
-        $categories = CategorieManager::getCategorieActive();
         foreach ($categories as $categorie) {
             echo '
             <div class="col-md-4 d-flex justify-content-center  mb-4">

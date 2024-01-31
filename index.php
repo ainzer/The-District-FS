@@ -1,5 +1,6 @@
 <?php
 require_once 'Model/Managers/CategorieManager.php';
+require_once 'Model/Managers/PlatManager.php';
 
 $categories = CategorieManager::getCategoriePopulaire();
 

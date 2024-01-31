@@ -32,4 +32,30 @@ class CategorieManager {
             exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
     }
+
+    public static function getCategorieActive() {
+
+        $bdd = dbconnect();
+
+        try {
+            // Requête SQL pour sélectionner les catégories actives limitées à 6 résultats
+            $query = "SELECT c.id, c.libelle, c.image
+            FROM categorie c
+            WHERE c.active = 'Yes'
+            LIMIT 6";
+
+            // Exécution de la requête
+            $stmt = $bdd->prepare($query);
+            $stmt->execute();
+
+            // Récupération des résultats
+            $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Retourner les catégories les plus populaires
+            return $categories;
+        } catch (PDOException $e) {
+            // Gérer l'erreur de requête de manière appropriée (journalisation, affichage d'un message d'erreur, etc.)
+            exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
+        }
+    }
 }

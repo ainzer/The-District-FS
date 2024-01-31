@@ -24,12 +24,14 @@ require_once 'Views/Partials/menu.php';
 </div>
 
 <div class="parallax">
+    <h2 class="text-center"><u>Catégorie</u></h2>
     <div class="container-fluid mt-3 row">
+        <!-- Affichage des catégories les plus populaires -->
         <?php
         $categories = CategorieManager::getCategoriePopulaire();
         foreach ($categories as $categorie) {
             echo '
-            <div class="col-md-4 d-flex justify-content-center justify-content-md-end mb-4">
+            <div class="col-md-4 d-flex justify-content-center  mb-4">
                 <div class="card zoom-image">
                     <img src="Asset/Img/category/' . $categorie['image'] . '" class="card-img-top card-img" alt="Image de la carte">
                     <div class="card-body">
@@ -40,7 +42,27 @@ require_once 'Views/Partials/menu.php';
         }
         ?>
     </div>
+<br>
+<h2 class="text-center"><u>Plat</u></h2>
+    <!-- Affichage des plats les plus vendus -->
+    <div class="container-fluid mt-3 row">
+        <?php
+        $plats = PlatManager::getPlatsPlusVendus();
+        foreach ($plats as $plat) {
+            echo '
+            <div class="col-md-4 d-flex justify-content-center mb-4">
+                <div class="card zoom-image">
+                    <img src="Asset/Img/food/' . $plat['image'] . '" class="card-img-top card-img" alt="Image du plat">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $plat['libelle'] . '</h5>
+                    </div>
+                </div>
+            </div>';
+        }
+        ?>
+    </div>
 </div>
+
 
 <?php
 require_once 'Views/Partials/footer.php';

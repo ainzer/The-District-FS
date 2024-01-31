@@ -1,7 +1,10 @@
 <?php
+require_once 'Model/Managers/PlatManager.php';
 
 // Vérifier si les informations de commande sont transmises via l'URL
 if (isset($_GET['plat_id'])) {
+    $id = $_GET['plat_id'];
+    $plat = PlatManager::getPlatById($id);
     // Inclure le fichier de vue de commande pour afficher la page
     require_once 'Views/commandeView.php';
 } else {

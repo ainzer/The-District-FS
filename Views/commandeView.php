@@ -6,9 +6,22 @@ require_once 'Views/Partials/menu.php';
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
-            <div class="card">
-                
-            </div>
+        <?php
+    /*$plats = PlatManager::getPlatsDetails();
+    foreach ($plats as $plat) {*/
+        echo '
+            <div class="col-md-4 d-flex justify-content-center mb-4">
+                <div class="card">
+                    <img src="Asset/Img/food/' . $plat['image'] . '" class="card-img-top card-img" alt="Image du plat">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $plat['libelle'] . '</h5>
+                        <p class="card-text">' . $plat['description'] . '</p>
+                        <p class="card-text">Prix: ' . $plat['prix'] . ' €</p>
+                    </div>
+                </div>
+            </div>';
+    //}
+    ?>
         </div>
         <div class="col-md-6">
             <form id="commandeForm">

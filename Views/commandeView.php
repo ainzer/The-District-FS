@@ -10,7 +10,7 @@ require_once 'Views/Partials/menu.php';
     /*$plats = PlatManager::getPlatsDetails();
     foreach ($plats as $plat) {*/
         echo '
-            <div class="col-md-4 d-flex justify-content-center mb-4">
+            <div class="d-flex justify-content-center mb-4">
                 <div class="card">
                     <img src="Asset/Img/food/' . $plat['image'] . '" class="card-img-top card-img" alt="Image du plat">
                     <div class="card-body">
@@ -43,7 +43,7 @@ require_once 'Views/Partials/menu.php';
                     <input type="number" class="form-control" id="quantite" name="quantite" min="1">
                 </div>
                 <button type="submit" class="btn btn-primary btn-mod">Commander</button>
-                <button type="reset" class="btn btn-primary btn-mod"> Effacer</button>
+                <a href="index.php" class="btn btn-secondary btn-mod">Annuler</a>
             </form>
         </div>
     </div>

@@ -11,5 +11,7 @@
             "email": "127862337+ainzer@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
 }

@@ -2,9 +2,11 @@
 require_once 'Model/connexion.php';
 require_once 'Model/Classes/Plat.class.php';
 
-class PlatManager {
+class PlatManager
+{
 
-    public static function getPlatsPlusVendus() {
+    public static function getPlatsPlusVendus()
+    {
 
         $bdd = dbconnect();
 
@@ -32,7 +34,8 @@ class PlatManager {
         }
     }
 
-    public static function getPlats() {
+    public static function getPlats()
+    {
 
         $bdd = dbconnect();
 
@@ -50,23 +53,47 @@ class PlatManager {
         }
     }
 
-    public static function getPlatById($id) {
+    public static function getPlatById($id)
+    {
 
         $bdd = dbconnect();
-    
+
         try {
-            $query = "SELECT image, libelle, description, prix FROM plat WHERE id = :id";
-    
+            $query = "SELECT image, libelle, description, prix
+            FROM plat
+            WHERE id = :id";
+
             $stmt = $bdd->prepare($query);
             $stmt->bindParam(':id', $id);
             $stmt->execute();
-    
+
             $plat = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
             return $plat;
         } catch (PDOException $e) {
             exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
-    }    
+    }
+
+    public static function getPlatByIdCategorie($id)
+    {
+
+        $bdd = dbconnect();
+
+        try {
+            $query = "SELECT id, libelle, description, prix, image
+            FROM plat
+            WHERE id_categorie = :id";
+
+            $stmt = $bdd->prepare($query);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+
+            $plat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $plat;
+        } catch (PDOException $e) {
+            exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
+        }
+    }
 }
-?>

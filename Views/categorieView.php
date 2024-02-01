@@ -24,6 +24,7 @@ require_once 'Views/Partials/menu.php';
                     <img src="Asset/Img/category/' . $categorie['image'] . '" class="card-img-top card-img" alt="Image de la carte">
                     <div class="card-body">
                         <h5 class="card-title">' . $categorie['libelle'] . '</h5>
+                        <a href="platCategorie.php?categorie_id=' . $categorie['id'] . '" class="btn btn-primary btn-mod">Plats</a>
                     </div>
                 </div>
             </div>';

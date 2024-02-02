@@ -27,19 +27,23 @@ require_once 'Views/Partials/menu.php';
             <form id="commandeForm">
                 <h3>Formulaire de Commande</h3>
                 <div class="mb-3">
-                    <label for="nom" class="form-label">Nom</label>
+                    <label for="nom" class="form-label">Nom :</label>
                     <input type="text" class="form-control" id="nom" name="nom">
                 </div>
                 <div class="mb-3">
-                    <label for="prenom" class="form-label">Prénom</label>
+                    <label for="prenom" class="form-label">Prénom :</label>
                     <input type="text" class="form-control" id="prenom" name="prenom">
                 </div>
                 <div class="mb-3">
-                    <label for="adresse" class="form-label">Adresse de livraison</label>
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom">
+                </div>
+                <div class="mb-3">
+                    <label for="adresse" class="form-label">Adresse de livraison :</label>
                     <input type="text" class="form-control" id="adresse" name="adresse">
                 </div>
                 <div class="mb-3">
-                    <label for="quantite" class="form-label">Quantité</label>
+                    <label for="quantite" class="form-label">Quantité :</label>
                     <input type="number" class="form-control" id="quantite" name="quantite" min="1">
                 </div>
                 <button type="submit" class="btn btn-primary btn-mod">Commander</button>

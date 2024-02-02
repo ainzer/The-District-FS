@@ -322,10 +322,11 @@
     function validateCommandeForm() {
         var nom = $("#nom").val();
         var prenom = $("#prenom").val();
+        var email = $("#email").val();
         var adresse = $("#adresse").val();
         var quantite = $("#quantite").val();
 
-        if (nom && prenom && adresse && quantite) {
+        if (nom && prenom && email && adresse && quantite) {
             return true;
         } else {
             alert("Veuillez remplir tous les champs du formulaire de commande.");
@@ -340,6 +341,7 @@
             var commandeFormData = {
                 nom: $("#nom").val(),
                 prenom: $("#prenom").val(),
+                email: $("#email").val(),
                 adresse: $("#adresse").val(),
                 quantite: $("#quantite").val()
             };

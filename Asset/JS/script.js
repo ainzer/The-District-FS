@@ -13,7 +13,7 @@
         });
     }
 
-    function loadAndSearch() {
+    /* function loadAndSearch() {
         function performSearch(input) {
             var matchingCategories = jsonData.categorie.filter(function (categorie) {
                 return categorie.libelle.toLowerCase().includes(input.toLowerCase());
@@ -84,7 +84,7 @@
                 window.location.href = "platCategorie.php?id=" + selectedCategorie.id_categorie;
             }
         });
-    }
+    } */
 
     // Fonction pour charger les catégories avec pagination
     function loadCategories(currentPage) {
@@ -346,9 +346,9 @@
                 quantite: $("#quantite").val()
             };
 
-            alert("Formulaire de commande soumis avec succès. Données : " + JSON.stringify(commandeFormData));
+            //alert("Formulaire de commande soumis avec succès. Données : " + JSON.stringify(commandeFormData));
             // Ajoute ici le code pour envoyer les données du formulaire de commande (commandeFormData) à ton serveur PHP si nécessaire.
         } else {
-            alert("Le formulaire de commande n'est pas valide.");
+            //alert("Le formulaire de commande n'est pas valide.");
         }
     });

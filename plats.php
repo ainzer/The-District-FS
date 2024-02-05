@@ -1,5 +1,5 @@
 <?php
-require_once 'Model/Managers/PlatManager.php';
+require_once 'Model/Managers/DAO.php';
 
 $plats = PlatManager::getPlats();
 

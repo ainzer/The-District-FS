@@ -1,5 +1,5 @@
 <?php
-require_once 'Model/Managers/PlatManager.php';
+require_once 'Model/Managers/DAO.php';
 
 // Vérifier si les informations de commande sont transmises via l'URL
 if (isset($_GET['plat_id'])) {

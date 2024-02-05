@@ -158,4 +158,26 @@ class PlatManager
             exit('Erreur lors de l\'exécution de la requête : ' . $e->getMessage());
         }
     }
+
+
+    public static function getSearchByLibelle($libelle)
+    {
+        $bdd = dbconnect();
+
+        try {
+            $query = "SELECT id, libelle, description, prix, image
+            FROM plat 
+            WHERE libelle LIKE :query";
+
+            $stmt = $bdd->prepare($query);
+            $stmt->bindValue(':query', '%' . $query . '%', PDO::PARAM_STR);
+            $stmt->execute();
+
+            $plat = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $plat;
+        } catch (PDOException $e) {
+            exit('Erreur de connexion à la base de données : ' . $e->getMessage());
+        }
+    }
 }

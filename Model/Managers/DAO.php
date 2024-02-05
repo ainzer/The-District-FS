@@ -165,7 +165,7 @@ class PlatManager
         $bdd = dbconnect();
 
         try {
-            $query = "SELECT id, libelle, description, prix, image
+            $query = "SELECT * 
             FROM plat 
             WHERE libelle LIKE :query";
 

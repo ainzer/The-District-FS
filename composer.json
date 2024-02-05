@@ -1,16 +1,4 @@
 {
-    "name": "tony/the-district-fs",
-    "autoload": {
-        "psr-4": {
-            "Tony\\TheDistrictFs\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Tony",
-            "email": "127862337+ainzer@users.noreply.github.com"
-        }
-    ],
     "require": {
         "phpmailer/phpmailer": "^6.9"
     }

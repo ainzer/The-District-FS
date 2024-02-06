@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fclose($fichier);
 
     // Affichage d'un message de confirmation
-    header("Location: merci.php");
+    header("Location: contact_merci.php");
 } else {
     // Redirection si le formulaire n'a pas été soumis
     header("Location: index.php");

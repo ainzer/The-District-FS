@@ -13,7 +13,7 @@ require_once 'Views/Partials/menu.php';
 </div>
 <div class="container-fluid mt-3 row">
     <?php
-    foreach($plats as $plat){
+    foreach ($plats as $plat){
         echo '
             <div class="col-md-4 d-flex justify-content-center mb-4">
                 <div class="card">
@@ -28,7 +28,7 @@ require_once 'Views/Partials/menu.php';
             </div>';
     }
     ?>
-
+</div>
 <?php
 require_once 'Views/Partials/footer.php';
 ?>

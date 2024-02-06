@@ -6,10 +6,10 @@ require_once 'Views/Partials/menu.php';
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
-        <?php
-    /*$plats = PlatManager::getPlatsDetails();
+            <?php
+            /*$plats = PlatManager::getPlatsDetails();
     foreach ($plats as $plat) {*/
-        echo '
+            echo '
             <div class="d-flex justify-content-center mb-4">
                 <div class="card">
                     <img src="Asset/Img/food/' . $plat['image'] . '" class="card-img-top card-img" alt="Image du plat">
@@ -20,8 +20,8 @@ require_once 'Views/Partials/menu.php';
                     </div>
                 </div>
             </div>';
-    //}
-    ?>
+            //}
+            ?>
         </div>
         <div class="col-md-6">
             <form id="commandeForm" action="commande_script.php" method="post" enctype="multipart/form-data">

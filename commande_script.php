@@ -44,8 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: commande_merci.php");
             /* echo 'Email envoyé avec succès'; */
         } catch (Exception $e) {
-           /*  header("location: erreur.php"); */
-        echo "L'envoi de mail a échoué. L'erreur suivante s'est produite : ", $mail->ErrorInfo;
+            header("location: commande_erreur.php");
         }
     }
 }

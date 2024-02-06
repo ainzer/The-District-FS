@@ -335,7 +335,7 @@
     }
 
     $("#commandeForm").submit(function (event) {
-        event.preventDefault();
+        //event.preventDefault();
 
         if (validateCommandeForm()) {
             var commandeFormData = {

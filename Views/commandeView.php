@@ -46,8 +46,8 @@ require_once 'Views/Partials/menu.php';
                     <label for="quantite" class="form-label">Quantité :</label>
                     <input type="number" class="form-control" id="quantite" name="quantite" min="1">
                 </div>
-                <input type="submit" class="btn btn-primary btn-mod" value="Commander">
-                <a href="index.php" class="btn btn-secondary btn-mod">Annuler</a>
+                <input type="submit" class="btn btn-primary mt-2 btn-mod" value="Envoyer">
+                <a href="index.php" class="btn btn-secondary mt-2 btn-mod">Annuler</a>
             </form>
         </div>
     </div>

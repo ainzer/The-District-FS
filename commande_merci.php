@@ -5,6 +5,7 @@ header("Refresh: 5; URL=index.php");
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,8 +34,10 @@ header("Refresh: 5; URL=index.php");
         }
     </style>
 </head>
-<body>
-    <h1>Demande envoyer avec succès!</h1>
+
+<body class="dark-theme">
+    <h1>Email envoyé avec succès!</h1>
     <p>Vous serez redirigé vers la page d'accueil dans 5 secondes.</p>
 </body>
+
 </html>

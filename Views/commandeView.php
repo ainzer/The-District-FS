@@ -26,6 +26,9 @@ require_once 'Views/Partials/menu.php';
         <div class="col-md-6">
             <form id="commandeForm" action="commande_script.php" method="post" enctype="multipart/form-data">
                 <h3>Formulaire de Commande</h3>
+                <!-- Champs cachés pour stocker le libellé et le prix -->
+                <input type="hidden" name="libelle" value="<?php echo $plat['libelle']; ?>">
+                <input type="hidden" name="prix" value="<?php echo $plat['prix']; ?>">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom :</label>
                     <input type="text" class="form-control" id="nom" name="nom" required>

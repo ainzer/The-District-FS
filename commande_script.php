@@ -4,7 +4,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once 'vendor/autoload.php';
-
 require_once 'Model/connexion.php';
 
 // Vérification si le formulaire a été soumis
@@ -15,32 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = ($_POST["email"]);
     $adresse = ($_POST["adresse"]);
     $quantite = ($_POST["quantite"]);
+    $platLibelle = ($_POST["libelle"]);
+    $platPrix = ($_POST["prix"]);
+    $total = $platPrix * $quantite;
 
-    if (isset($_GET['plat_id'])) {
-        $plat_id = $_GET['plat_id'];
-    } else {
-        exit("ID du plat non spécifié dans l'URL");
-    }
+    // Construction du message
+    $message = "Bonjour $nom $prenom,<br><br>";
+    $message .= "Voici votre commande :<br><br>";
+    $message .= "Plat: $platLibelle<br>";
+    $message .= "Quantité: $quantite<br>";
+    $message .= "Prix unitaire: $platPrix €<br>";
+    $message .= "Total: $total €<br>";
 
-    $bdd = dbconnect();
-
-    $query = "SELECT libelle, prix FROM plats WHERE id = :id";
-    $statement = $bdd->prepare($query);
-    $statement->bindParam(':id', $plat_id, PDO::PARAM_INT);
-    $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
-    $plat = $result['nom_plat'];
-    $prix = $result['prix'];
-    $total = $prix * $quantite;
-
-    $message = "Bonjour $nom,\n\n";
-    $message .= "Voici le votre commande :\n\n";
-    $message .= "Plat: $plat\n";
-    $message .= "Quantité: $quantite\n";
-    $message .= "Prix unitaire: $prix\n";
-    $message .= "Total: $total\n\n";
-
+    // Envoi de l'email
     $mail = new PHPMailer(true);
+    $mail->isSMTP();
     $mail->Host = 'localhost';
     $mail->SMTPAuth = false;
     $mail->Port = 1025;
@@ -53,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($mail) {
         try {
             $mail->send();
-            /* header("location: commande_merci.php"); */
-            echo 'Email envoyé avec succès';
+            header("location: commande_merci.php");
+            /* echo 'Email envoyé avec succès'; */
         } catch (Exception $e) {
            /*  header("location: erreur.php"); */
         echo "L'envoi de mail a échoué. L'erreur suivante s'est produite : ", $mail->ErrorInfo;

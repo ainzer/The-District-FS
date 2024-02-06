@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 
@@ -35,9 +35,6 @@ $mail->addBCC("bcc@example.com");
 
 // On précise si l'on veut envoyer un email sous format HTML 
 $mail->isHTML(true);
-
-// On ajoute la/les pièce(s) jointe(s)
-$mail->addAttachment('/path/to/file.pdf');
 
 // Sujet du mail
 $mail->Subject = 'Test PHPMailer';

@@ -13,6 +13,7 @@ require_once 'Views/Partials/menu.php';
 </div>
 <div class="container-fluid mt-3 row">
     <?php
+    echo '<!-----'. count($plats) .'------>';
     foreach ($plats as $plat){
         echo '
             <div class="col-md-4 d-flex justify-content-center mb-4">

@@ -167,10 +167,10 @@ class PlatManager
         try {
             $query = "SELECT * 
             FROM plat 
-            WHERE libelle LIKE :query";
+            WHERE libelle LIKE :libelle";
 
             $stmt = $bdd->prepare($query);
-            $stmt->bindValue(':query', '%' . $query . '%', PDO::PARAM_STR);
+            $stmt->bindValue(':libelle', '%' . $libelle . '%', PDO::PARAM_STR);
             $stmt->execute();
 
             $plat = $stmt->fetchAll(PDO::FETCH_ASSOC);

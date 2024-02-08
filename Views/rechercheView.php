@@ -2,7 +2,7 @@
 require_once 'Views/Partials/header.php';
 require_once 'Views/Partials/menu.php';
 ?>
-<div class="container-fluid mt-2 mod-video">
+<!-- <div class="container-fluid mt-2 mod-video">
     <div class="row">
         <div class="col-md-12">
             <div class="embed-responsive embed-responsive-16by9 text-center">
@@ -10,7 +10,7 @@ require_once 'Views/Partials/menu.php';
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="container-fluid mt-3 row">
     <?php
     echo '<!-----'. count($plats) .'------>';
